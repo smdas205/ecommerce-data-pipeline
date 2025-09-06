@@ -36,7 +36,31 @@ Phase 2:
 Generated random logs onto a comma-separated file (data-generator/random.csv) using a python script (data-generator/log-generator.py).  
 
 Phase 3:  
-Using a PySpark script (pyspark-jobs/process_logs.py), converted raw logs into analytical tables, which were saved as .csv files.  
+Using a PySpark script (pyspark-jobs/process_logs.py), converted raw logs into analytical tables, which were saved as .csv files.
+Analytical tables are as follows:  
+1. product_count  
+|field                      |data_type |description                                                                         |  
+|:--------------------------|:--------:|-----------------------------------------------------------------------------------:|  
+|product_id                 |string    |Stores the product ID of the ecommerce log.                                         |
+|product_revenue            |double    |Collects the total revenue of the specified product_id.                             |
+|product_event_count        |int       |Gets the total count of all events occured for a specified product ID.              |
+|product_user_impressions   |int       |Gets the total user impressions that occured for a specified product ID.            |  
+
+2. event_count
+|field                      |data_type |description                                                                         |  
+|:--------------------------|:--------:|-----------------------------------------------------------------------------------:|  
+|type_of_event              |string    |Stores the specific event that happened                                             |
+|event_count                |int       |Gets the total count of specified events                                            |
+
+3. daily_events  
+|field                      |data_type |description                                                                         |  
+|:--------------------------|:--------:|-----------------------------------------------------------------------------------:|
+|event_date                 |date      |Stores the date of the event, extracted from timestamp of the event.                |
+|cart                       |int       |Gets the total count of cart storage events that happened on a specified date.      |
+|purchase                   |int       |Gets the total count of purchase events that happened on a specified date.          |
+|return                     |int       |Gets the total count of return events that happened on a specified date.            |
+|view                       |int       |Gets the total count of items just being viewed on a specified date.                |
+|total_revenue              |double    |Gets the total revenue collected on a specified date.                               |
 
 Phase 4:  
 Transferred the anaytical .csv tables to Hive, created Hive database 'ecommerce' where previous .csv files were turned into external tables. Also performed some queries to check for proper Hadoop - Hive integration.  
