@@ -47,14 +47,7 @@ join_product.coalesce(1)\
     .option("delimiter", ",")\
         .mode("overwrite")\
             .csv("file:///home/smdas/projects/ecommerce-data-pipeline/output/product_count")
-#df.groupBy("product_id")\
-#    .agg(sum("price").alias("product_revenue"),\
-#        count("*").alias("product_event_count"),\
-#        count("")
-#        )\
-#    .orderBy("product_id")\
-    
-
+ 
 #Date Based Logs
 event_counts = df_date.groupBy("event_date")\
     .pivot("type_of_event")\
