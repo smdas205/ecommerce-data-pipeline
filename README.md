@@ -13,13 +13,13 @@ Version Control: Git
 Metadata Schema  
 
 
-|field         |data_type |description                                                                         |  
-|:-------------|:--------:|-----------------------------------------------------------------------------------:|  
-|user_id       |string    |Stores the User ID of the customer                                                  |  
-|type_of_event |string    |Mentions the type of event based on what happened. eg: view, cart, purchase, return |  
-|timestamp     |datetime  |Timestamp at which the event occured                                                |  
-|product_id    |string    |Unique ID of the product for which the specified event occured for the customer     |  
-|price         |float     |Price of the product.                                                               |  
+|field         |data_type|description                                                                         |  
+|:-------------|:--------|:-----------------------------------------------------------------------------------|  
+|user_id       |string   |Stores the User ID of the customer                                                  |  
+|type_of_event |string   |Mentions the type of event based on what happened. eg: view, cart, purchase, return |  
+|timestamp     |datetime |Timestamp at which the event occured                                                |  
+|product_id    |string   |Unique ID of the product for which the specified event occured for the customer     |  
+|price         |float    |Price of the product.                                                               |  
 
 
 For price:  
@@ -41,34 +41,36 @@ Analytical tables are as follows:
 1. product_count  
 
 
-|field                      |data_type |description                                                                         |  
-|:--------------------------|:--------:|-----------------------------------------------------------------------------------:|  
-|product_id                 |string    |Stores the product ID of the ecommerce log.                                         |  
-|product_revenue            |double    |Collects the total revenue of the specified product_id.                             |  
-|product_event_count        |int       |Gets the total count of all events occured for a specified product ID.              |  
-|product_user_impressions   |int       |Gets the total user impressions that occured for a specified product ID.            |    
+|field                      |data_type|description                                                                         |  
+|:--------------------------|:--------|:-----------------------------------------------------------------------------------|  
+|product_id                 |string   |Stores the product ID of the ecommerce log.                                         |  
+|product_revenue            |double   |Collects the total revenue of the specified product_id.                             |  
+|product_event_count        |int      |Gets the total count of all events occured for a specified product ID.              |  
+|product_user_impressions   |int      |Gets the total user impressions that occured for a specified product ID.            |    
 
 
 
 2. event_count
 
 
-|field                      |data_type |description                                                                         |  
-|:--------------------------|:--------:|-----------------------------------------------------------------------------------:|  
-|type_of_event              |string    |Stores the specific event that happened                                             |  
-|event_count                |int       |Gets the total count of specified events                                            |  
+|field                      |data_type|description                                                                         |  
+|:--------------------------|:--------|:-----------------------------------------------------------------------------------|  
+|type_of_event              |string   |Stores the specific event that happened                                             |  
+|event_count                |int      |Gets the total count of specified events                                            |  
 
 
 
 3. daily_events  
-|field                      |data_type |description                                                                         |   
-|:--------------------------|:--------:|-----------------------------------------------------------------------------------:|   
-|event_date                 |date      |Stores the date of the event, extracted from timestamp of the event.                |  
-|cart                       |int       |Gets the total count of cart storage events that happened on a specified date.      |  
-|purchase                   |int       |Gets the total count of purchase events that happened on a specified date.          |  
-|return                     |int       |Gets the total count of return events that happened on a specified date.            |  
-|view                       |int       |Gets the total count of items just being viewed on a specified date.                |  
-|total_revenue              |double    |Gets the total revenue collected on a specified date.                               |  
+
+
+|field                      |data_type|description                                                                         |   
+|:--------------------------|:--------|:-----------------------------------------------------------------------------------|   
+|event_date                 |date     |Stores the date of the event, extracted from timestamp of the event.                |  
+|cart                       |int      |Gets the total count of cart storage events that happened on a specified date.      |  
+|purchase                   |int      |Gets the total count of purchase events that happened on a specified date.          |  
+|return                     |int      |Gets the total count of return events that happened on a specified date.            |  
+|view                       |int      |Gets the total count of items just being viewed on a specified date.                |  
+|total_revenue              |double   |Gets the total revenue collected on a specified date.                               |  
 
 
 
