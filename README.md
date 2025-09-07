@@ -38,6 +38,8 @@ Generated random logs onto a comma-separated file (data-generator/random.csv) us
 Phase 3:  
 Using a PySpark script (pyspark-jobs/process_logs.py), converted raw logs into analytical tables, which were saved as .csv files.
 Analytical tables are as follows:  
+
+
 1. product_count  
 
 
@@ -46,8 +48,10 @@ Analytical tables are as follows:
 |product_id                 |string   |Stores the product ID of the ecommerce log.                                         |  
 |product_revenue            |double   |Collects the total revenue of the specified product_id.                             |  
 |product_event_count        |int      |Gets the total count of all events occured for a specified product ID.              |  
-|product_user_impressions   |int      |Gets the total user impressions that occured for a specified product ID.            |    
-
+|cart                       |int      |Gets the total cart save count that occured for a specified product ID.             |  
+|purchase                   |int      |Gets the total purchase count that occured for a specified product ID.              |  
+|view                       |int      |Gets the total view count that occured for a specified product ID.                  |  
+|return                     |int      |Gets the total return count that occured for a specified product ID.                |  
 
 
 2. event_count
@@ -76,3 +80,7 @@ Analytical tables are as follows:
 
 Phase 4:  
 Transferred the anaytical .csv tables to Hive, created Hive database 'ecommerce' where previous .csv files were turned into external tables. Also performed some queries to check for proper Hadoop - Hive integration.  
+
+
+Changes as of 07-Sept-2025:  
+Added new columns to product_count table to better reflect real life situations. Removed one column(product_user_impressions) because of irrelevancy.
