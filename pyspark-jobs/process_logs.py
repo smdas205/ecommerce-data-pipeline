@@ -29,17 +29,31 @@ df.groupBy("type_of_event")\
             .csv("file:///home/smdas/projects/ecommerce-data-pipeline/output/event_count")
 
 #Product Based Logs
-df.groupBy("product_id")\
+product_count = df.groupBy("product_id")\
     .agg(sum("price").alias("product_revenue"),\
-        count("*").alias("product_event_count"),\
-        count_distinct("user_id").alias("product_user_impressions"))\
-    .orderBy("product_id")\
-    .coalesce(1)\
+         count("*").alias("product_event_count"))
+
+product_events = df.groupBy("product_id")\
+    .pivot("type_of_event")\
+    .agg(count("*"))\
+    .fillna(0)\
+    .orderBy("product_id")
+
+join_product = product_count.join(product_events, on="product_id", how="left").orderBy("product_id")
+
+join_product.coalesce(1)\
     .write\
     .option("header",True)\
     .option("delimiter", ",")\
         .mode("overwrite")\
             .csv("file:///home/smdas/projects/ecommerce-data-pipeline/output/product_count")
+#df.groupBy("product_id")\
+#    .agg(sum("price").alias("product_revenue"),\
+#        count("*").alias("product_event_count"),\
+#        count("")
+#        )\
+#    .orderBy("product_id")\
+    
 
 #Date Based Logs
 event_counts = df_date.groupBy("event_date")\
