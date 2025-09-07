@@ -50,8 +50,8 @@ Analytical tables are as follows:
 |product_event_count        |int      |Gets the total count of all events occured for a specified product ID.              |  
 |cart                       |int      |Gets the total cart save count that occured for a specified product ID.             |  
 |purchase                   |int      |Gets the total purchase count that occured for a specified product ID.              |  
-|view                       |int      |Gets the total view count that occured for a specified product ID.                  |  
 |return                     |int      |Gets the total return count that occured for a specified product ID.                |  
+|view                       |int      |Gets the total view count that occured for a specified product ID.                  |  
 
 
 2. event_count
