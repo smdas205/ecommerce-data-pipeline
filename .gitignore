@@ -1,6 +1,7 @@
 __pycache__/
 *.pyc
 *.log
+.vscode/
 .DS_Store
 *.ipynb_checkpoints
-data_generator/random.csv
+requirements.txt
