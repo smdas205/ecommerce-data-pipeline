@@ -8,7 +8,7 @@ spark =  SparkSession.builder.appName("Process Logs").getOrCreate()
 spark.sparkContext.setLogLevel("ERROR")
 df = spark\
     .read\
-    .csv("file:///home/smdas/projects/ecommerce-data-pipeline/data-generator/random.csv"\
+    .csv("file:///home/hadoop/ecommerce-data-pipeline/data-generator/random.csv"\
          , header = True\
             , inferSchema = True)
 
@@ -20,13 +20,13 @@ df_date = df_date.withColumnRenamed("date", "event_date")
 
 #Event Based Logs
 df.groupBy("type_of_event")\
-    .agg(count("*").alias("event_count")).\
+    .agg(count("*").alias("count_of_event")).\
     coalesce(1)\
     .write\
     .option("header",True)\
     .option("delimiter", ",")\
         .mode("overwrite")\
-            .csv("file:///home/smdas/projects/ecommerce-data-pipeline/output/event_count")
+            .csv("file:///home/hadoop/ecommerce-data-pipeline/output/event_count")
 
 #Product Based Logs
 product_count = df.groupBy("product_id")\
@@ -46,7 +46,7 @@ join_product.coalesce(1)\
     .option("header",True)\
     .option("delimiter", ",")\
         .mode("overwrite")\
-            .csv("file:///home/smdas/projects/ecommerce-data-pipeline/output/product_count")
+            .csv("file:///home/hadoop/ecommerce-data-pipeline/output/product_count")
  
 #Date Based Logs
 event_counts = df_date.groupBy("event_date")\
@@ -66,4 +66,4 @@ join_events.coalesce(1)\
     .option("header",True)\
     .option("delimiter", ",")\
         .mode("overwrite")\
-            .csv("file:///home/smdas/projects/ecommerce-data-pipeline/output/daily_events")
+            .csv("file:///home/hadoop/ecommerce-data-pipeline/output/daily_events")
