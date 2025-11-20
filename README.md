@@ -30,12 +30,15 @@ If event view or cart, value will be zero, indicating no revenue change with the
 Process:  
 
 Phase 0:  **Initialization**
+
 Created the initial project structure and created Git and GitHub repository.  
 
 Phase 1:  **Basic Python Script**
+
 Generated random logs onto a comma-separated file (logs/random_{yesterday_date}.csv) using a python script (data-generator/log-generator.py).  
 
 Phase 2:  **Intermediate Python, PySpark and Spark SQL**
+
 Using a PySpark script (pyspark-jobs/process_logs.py), converted raw logs into analytical tables, which were saved as .parquet files.
 Analytical tables are as follows:  
 
@@ -85,12 +88,14 @@ Analytical tables are as follows:
 
 
 Phase 4: **HDFS and Hive with HiveQL**
+
 Transferred the output PARQUET files to HDFS, sorted by table and partitioned by date. Created folders if not created.
 
 Created external tables within Hive as part of the 'ecommerce' database to perform HiveQL queries on it. Needed to install Tez to process complex queries
 
 
 Phase 5: **Airflow Workflow Orchestration**
+
 Created an Airflow DAG script in Python to orchestrate the whole workflow in an orderly manner. Records are updated by date, newer runs for the same date replace old records with the same date.
 
 
