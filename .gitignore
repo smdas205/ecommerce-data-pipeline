@@ -2,6 +2,9 @@ __pycache__/
 *.pyc
 *.log
 .vscode/
+output/
 .DS_Store
 *.ipynb_checkpoints
 requirements.txt
+debug_time.py
+changelog.txt
