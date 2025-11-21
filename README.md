@@ -1,4 +1,4 @@
-A project to implement data engineering concepts  
+## A project to implement data engineering concepts  
 
 Purpose: To ingest, process and analyze data logs from e-commerce logs.   
 
@@ -29,15 +29,15 @@ If event view or cart, value will be zero, indicating no revenue change with the
 
 Process:  
 
-Phase 0:  **Initialization**
+### Phase 0:  Initialization
 
 Created the initial project structure and created Git and GitHub repository.  
 
-Phase 1:  **Basic Python Script**
+### Phase 1:  Basic Python Script
 
 Generated random logs onto a comma-separated file (logs/random_{yesterday_date}.csv) using a python script (data-generator/log-generator.py).  
 
-Phase 2:  **Intermediate Python, PySpark and Spark SQL**
+### Phase 2:  Intermediate Python, PySpark and Spark SQL
 
 Using a PySpark script (pyspark-jobs/process_logs.py), converted raw logs into analytical tables, which were saved as .parquet files.
 Analytical tables are as follows:  
@@ -87,23 +87,35 @@ Analytical tables are as follows:
 
 
 
-Phase 4: **HDFS and Hive with HiveQL**
+### Phase 4: HDFS and Hive with HiveQL
 
 Transferred the output PARQUET files to HDFS, sorted by table and partitioned by date. Created folders if not created.
 
 Created external tables within Hive as part of the 'ecommerce' database to perform HiveQL queries on it. Needed to install Tez to process complex queries
 
 
-Phase 5: **Airflow Workflow Orchestration**
+![Hive Beeline Screenshot showcasing event_count table](https://github.com/smdas205/ecommerce-data-pipeline/blob/main/screenshots/hive_screenshot.png)
+
+
+
+![Hive Beeline showcasing product_count table](https://github.com/smdas205/ecommerce-data-pipeline/blob/main/screenshots/hive_screenshot_1.png)
+
+
+### Phase 5: Airflow Workflow Orchestration
 
 Created an Airflow DAG script in Python to orchestrate the whole workflow in an orderly manner. Records are updated by date, newer runs for the same date replace old records with the same date.
 
 
-**CHANGES**
+
+![Airflow UI Screenshot showcasing DAG flow](https://github.com/smdas205/ecommerce-data-pipeline/blob/main/screenshots/airflow_screenshot.png)
+
+
+### CHANGES
 
 
 *07-Sep-2025*:  
 Added new columns to product_count table to better reflect real life situations. Removed one column(product_user_impressions) because of irrelevancy.
 
 *21-Nov-2025*:
+
 Replaced *"date_events"* with *"time_events"* to better reflect daily updation of records. Created Airflow script for orchestration. Updated both the log-generator file and log-processor scripts for Airflow idempotency.
