@@ -95,11 +95,11 @@ Transferred the output PARQUET files to HDFS, sorted by table and partitioned by
 Created external tables within Hive as part of the 'ecommerce' database to perform HiveQL queries on it. Needed to install Tez to process complex queries
 
 
-![Hive Beeline Screenshot showcasing event_count table](https://github.com/smdas205/ecommerce-data-pipeline/blob/main/screenshots/hive_screenshot.png)
+![Hive Beeline Screenshot showcasing event_count table](https://github.com/smdas205/ecommerce-data-pipeline/blob/main/screenshots/hive_screenshot.png "Hive Beeline Screenshot showcasing event_count table")
 
 
 
-![Hive Beeline showcasing product_count table](https://github.com/smdas205/ecommerce-data-pipeline/blob/main/screenshots/hive_screenshot_1.png)
+![Hive Beeline showcasing product_count table](https://github.com/smdas205/ecommerce-data-pipeline/blob/main/screenshots/hive_screenshot_1.png "Hive Beeline showcasing product_count table")
 
 
 ### Phase 5: Airflow Workflow Orchestration
@@ -108,7 +108,7 @@ Created an Airflow DAG script in Python to orchestrate the whole workflow in an 
 
 
 
-![Airflow UI Screenshot showcasing DAG flow](https://github.com/smdas205/ecommerce-data-pipeline/blob/main/screenshots/airflow_screenshot.png)
+![Airflow UI Screenshot showcasing DAG flow](https://github.com/smdas205/ecommerce-data-pipeline/blob/main/screenshots/airflow_screenshot.png "Airflow UI Screenshot showcasing DAG flow")
 
 
 ### CHANGES
