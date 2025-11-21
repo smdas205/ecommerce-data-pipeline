@@ -24,9 +24,9 @@ Purpose: To ingest, process and analyze data logs from e-commerce logs.
 
 
 For product_revenue:  
-If purchase event, value will be positive, reflecting profit to company  
-If return event, value will be negative, reflecting loss to company  
-If event view or cart, value will be zero, indicating no revenue change with these actions to the company  
+* If purchase event, value will be positive, reflecting profit to company  
+* If return event, value will be negative, reflecting loss to company  
+* If event view or cart, value will be zero, indicating no revenue change with these actions to the company  
 
 ### PROCESS:  
 
