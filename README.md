@@ -28,7 +28,7 @@ If purchase event, value will be positive, reflecting profit to company
 If return event, value will be negative, reflecting loss to company  
 If event view or cart, value will be zero, indicating no revenue change with these actions to the company  
 
-Process:  
+### PROCESS:  
 
 ### Phase 0:  Initialization
 
