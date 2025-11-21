@@ -3,12 +3,12 @@
 Purpose: To ingest, process and analyze data logs from e-commerce logs.   
 
 **Softwares used**:  
-*Programming Languages*: Python, SQL  
-*Databases*: MySQL  
-*Frameworks*: Apache Hadoop, Apache Spark, Apache Tez
-*Data Warehouse*: Apache Hive 
-*API*: PySpark  
-*Version Control*: Git  
+* *Programming Languages*: Python, SQL  
+* *Databases*: MySQL  
+* *Frameworks*: Apache Hadoop, Apache Spark, Apache Tez
+* *Data Warehouse*: Apache Hive 
+* *API*: PySpark  
+* *Version Control*: Git  
 
 
 **Log Metadata Schema** 
