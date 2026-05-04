@@ -1,3 +1,7 @@
+> CAUTION
+> ** This Project is Abandoned. ** I am no longer maintaining this repository.
+> ** Link to new project will be shared shortly. **
+
 ## A project to implement data engineering concepts  
 
 Purpose: To ingest, process and analyze data logs from e-commerce logs.   
