@@ -1,6 +1,6 @@
-> CAUTION
-> ** This Project is Abandoned. ** I am no longer maintaining this repository.
-> ** Link to new project will be shared shortly. **
+CAUTION
+** This Project is Abandoned. ** I am no longer maintaining this repository.
+** Link to new project will be shared shortly. **
 
 ## A project to implement data engineering concepts  
 
