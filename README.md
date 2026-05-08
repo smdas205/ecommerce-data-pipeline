@@ -1,6 +1,9 @@
 CAUTION
-** This Project is Abandoned. ** I am no longer maintaining this repository.
-** Link to new project will be shared shortly. **
+**This Project is Abandoned.** 
+
+**I am no longer maintaining this repository.**
+
+**Link to new project: (https://github.com/smdas205/nyc-tlc-bi-pipeline)**
 
 ## A project to implement data engineering concepts  
 
